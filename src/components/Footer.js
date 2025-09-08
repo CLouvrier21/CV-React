@@ -1,34 +1,56 @@
-import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import "../styles/Footer.css";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-light text-center text-muted py-4 mt-5">
-      <div className="container">
-        <div className="row text-start">
-          <div className="col-md-3">
-            <h6>John DOE</h6>
-            <p>123 rue du Code<br />75000 Paris<br />06 12 34 56 78</p>
-            <a href="https://github.com/github-john-doe" target="_blank" rel="noreferrer">GitHub</a><br />
-            <a href="https://linkedin.com/in/john-doe-dev" target="_blank" rel="noreferrer">LinkedIn</a><br />
-            <a href="https://twitter.com/john_doe" target="_blank" rel="noreferrer">Twitter</a>
-          </div>
-          <div className="col-md-3">
+    <footer className="footer">
+      <Container>
+        <Row>
+          <Col md={3}>
+            <h5>John DOE</h5>
+            <p>
+              123 rue Exemple<br />
+              75000 Paris<br />
+              +33 6 12 34 56 78
+            </p>
+            <p>
+              <a href="https://github.com/github-john-doe" target="_blank" rel="noreferrer noopener">GitHub</a> |
+              <a href="https://twitter.com/" target="_blank" rel="noreferrer noopener"> Twitter</a> |
+              <a href="https://linkedin.com/" target="_blank" rel="noreferrer noopener"> LinkedIn</a>
+            </p>
+          </Col>
+          <Col md={3}>
             <h6>Navigation</h6>
-            <p><a href="/about">À propos</a><br /><a href="/services">Services</a><br /><a href="/contact">Contact</a></p>
-          </div>
-          <div className="col-md-3">
-            <h6>Réalisations</h6>
-            <p><a href="/portfolio">Projet 1</a><br /><a href="/portfolio">Projet 2</a></p>
-          </div>
-          <div className="col-md-3">
-            <h6>Articles</h6>
-            <p><a href="/blog">Article 1</a><br /><a href="/blog">Article 2</a></p>
-          </div>
+            <ul className="footer-links">
+              <li><a href="/">Accueil</a></li>
+              <li><a href="/about">À propos</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </Col>
+          <Col md={3}>
+            <h6>Dernières réalisations</h6>
+            <ul className="footer-links">
+              <li>Projet 1</li>
+              <li>Projet 2</li>
+              <li>Projet 3</li>
+            </ul>
+          </Col>
+          <Col md={3}>
+            <h6>Derniers articles</h6>
+            <ul className="footer-links">
+              <li>Article 1</li>
+              <li>Article 2</li>
+              <li>Article 3</li>
+            </ul>
+          </Col>
+        </Row>
+
+        <div className="footer-bottom">
+          © {new Date().getFullYear()} John DOE — 
+          <a href="#top" className="back-to-top">Haut de page</a>
         </div>
-        <p className="mt-3">© 2025 John DOE — Tous droits réservés</p>
-      </div>
+      </Container>
     </footer>
   );
-};
-
-export default Footer;
+}

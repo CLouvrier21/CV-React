@@ -1,24 +1,28 @@
-import React from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
-const Portfolio = () => {
+export default function Portfolio() {
+  const projects = [
+    { title: "Fresh-Food", img: "/p1.jpg" },
+    { title: "Restaurant", img: "/p2.jpg" },
+    { title: "Espace bien-être", img: "/p3.jpg" }
+  ];
+
   return (
-    <section>
-      <h2>Mes réalisations</h2>
-      <div className="row">
-        {[1, 2, 3].map((proj) => (
-          <div key={proj} className="col-md-4 mb-3">
-            <div className="card">
-              <img src={`https://via.placeholder.com/300x200?text=Projet+${proj}`} className="card-img-top" alt={`Projet ${proj}`} />
-              <div className="card-body">
-                <h5 className="card-title">Projet {proj}</h5>
-                <p className="card-text">Description du projet {proj}</p>
-              </div>
-            </div>
-          </div>
+    <Container className="py-5">
+      <h2>Mes Réalisations</h2>
+      <Row>
+        {projects.map((p, i) => (
+          <Col md={4} key={i}>
+            <Card className="mb-4">
+              <Card.Img variant="top" src={p.img} />
+              <Card.Body>
+                <Card.Title>{p.title}</Card.Title>
+                <Card.Text>Description du projet.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
-    </section>
+      </Row>
+    </Container>
   );
-};
-
-export default Portfolio;
+}

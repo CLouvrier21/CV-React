@@ -1,17 +1,26 @@
-import React from "react";
+import { Container, Row, Col, ProgressBar } from "react-bootstrap";
 
-const About = () => {
+export default function About() {
   return (
-    <section>
-      <h2>À propos</h2>
-      <p>Je m'appelle <strong>John DOE</strong>, développeur web junior basé à Paris, actuellement en formation au CEF. Passionné par la création d'interfaces modernes et ergonomiques, je cherche à mettre mes compétences au service de projets concrets.</p>
-      <ul>
-        <li><strong>Compétences :</strong> HTML, CSS, JavaScript, React.js, Node.js</li>
-        <li><strong>Langues :</strong> Français, Anglais</li>
-        <li><strong>Centres d’intérêt :</strong> Veille technologique, design UI/UX, open source</li>
-      </ul>
-    </section>
+    <Container id="about" className="py-5">
+      <Row>
+        <Col md={4}>
+          <img src="/john.jpg" alt="John DOE" className="img-fluid rounded" />
+        </Col>
+        <Col md={8}>
+          <h2>À propos de moi</h2>
+          <p>Développeur passionné par la création de sites modernes et performants.</p>
+          <h5>Compétences</h5>
+          <p>HTML</p>
+          <ProgressBar now={90} label="90%" />
+          <p>CSS</p>
+          <ProgressBar now={85} label="85%" />
+          <p>JavaScript</p>
+          <ProgressBar now={80} label="80%" />
+          <p>React</p>
+          <ProgressBar now={75} label="75%" />
+        </Col>
+      </Row>
+    </Container>
   );
-};
-
-export default About;
+}

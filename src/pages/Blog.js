@@ -1,23 +1,23 @@
-import React from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
-const Blog = () => {
+export default function Blog() {
+  const articles = Array.from({ length: 6 }, (_, i) => ({ title: `Article ${i+1}`, text: "Introduction à l’article." }));
+
   return (
-    <section>
-      <h2>Blog</h2>
-      <div className="row">
-        {[1, 2, 3, 4, 5, 6].map((a) => (
-          <div key={a} className="col-md-4 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Article {a}</h5>
-                <p className="card-text">Introduction à l'article {a}...</p>
-              </div>
-            </div>
-          </div>
+    <Container className="py-5">
+      <h2>Mon Blog</h2>
+      <Row>
+        {articles.map((a, i) => (
+          <Col md={4} key={i}>
+            <Card className="mb-4">
+              <Card.Body>
+                <Card.Title>{a.title}</Card.Title>
+                <Card.Text>{a.text}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
-    </section>
+      </Row>
+    </Container>
   );
-};
-
-export default Blog;
+}

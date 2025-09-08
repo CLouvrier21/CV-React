@@ -1,0 +1,8 @@
+.service-card .service-icon {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #cde1f8;
+}
